@@ -56,7 +56,7 @@ int main(){
 				scanf("%s", username);
 				
 				// Creamos un buble que recorra todos los nombres guardados en el vector y los compare con el usuario introducido para ver si realmente 
-				// es· registrado o no. A raÌz de las diferentes posibilidades escribimos diferentes soluciones/salidas del programa:
+				// esta registrado o no. A raiz de las diferentes posibilidades escribimos diferentes soluciones/salidas del programa:
 				
 				for(j=0;j < contadorC; j++){
 					
@@ -89,27 +89,26 @@ int main(){
 			case 'R':
 				printf("Para registrarse necesitara un nombre de usuario y una password\n");
 				
-				// Para que un usuario que quiera registrarse no tenga el mismo nombre que otro ya registrado creamos un bucle do-while que avise al usuario
-				// de que ese nombre ya existe en el fichero cuentas.
+				// Para que un usuario que quiera registrarse no tenga el mismo nombre que otro ya registrado creamos un bucle do-while 
+				// que avise al usuario de que ese nombre ya existe en el fichero cuentas.txt.
 				do{
 					printf("Introduzca el nombre deseado:\n");
 					fflush(stdin);
-				    scanf("%s", username);
+				        scanf("%s", username);
 				    
 					for(j=0; j<contadorC; j++){
 						
-						existeU = strcmp(username, cuenta[j].username); 
+					    existeU = strcmp(username, cuenta[j].username); 
 						
 					    if(existeU == 0){
 						 printf("Este usuario ya existe, introduzca uno valido.\n");
 						 break;
-						}
-						else{
-							printf("Nombre disponible.\n");
-							break;
-						}
+					     }
+					    else{
+						printf("Nombre disponible.\n");
+						break;
+					    }
 					}	
-					
 				}while(existeU == 0);
 				
 				printf("Introduzca la contrasenia:\n");
@@ -138,7 +137,7 @@ int main(){
 	
 	fclose(patitos);
 	
-	// Una vez el usuario se haya registrado o iniciado sesiÛn, comienza la compra de patitos:
+	// Una vez el usuario se haya registrado o iniciado sesion, comienza la compra de patitos:
 	
 	printf("Bienvenido a la tienda: \n");
 	printf("Escoja de que pato quiere ver mas informacion introduciendo su numero:\n");
