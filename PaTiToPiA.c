@@ -2,8 +2,10 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
-// esta libreria sirve para hacer las pausas ( sleep() ) a lo largo del programa
-#include <dos.h>
+#include <dos.h> // esta libreria sirve para hacer las pausas ( sleep() ) a lo largo del programa
+#define rojo "\x1b[31m"
+#define reset "\x1b[33m"
+#define verde "\x1b[32m"
 
 struct cuentas{
 	char username[100];
@@ -107,328 +109,327 @@ int main(){
 		}
 		scanf("%d", &opcion);
 		printf("\n\n");
-    	switch(opcion){
-        	case 1:
-        		printf("Pato seleccionado: Patito Pirata\n");
-        		printf("Equipado con una espada, un parche en el ojo, un gran sombrero, y una pata de palo, \neste patito de goma te ayudara a conquistar la ba%cera.\nPero ten cuidado no se rebele y decida sustituirte como capitan del ba%co.\n", nn, nn);
-        		printf("Precio: 31.41$\n");
+    		switch(opcion){
+        		case 1:
+        			printf("Pato seleccionado: Patito Pirata\n");
+        			printf("Equipado con una espada, un parche en el ojo, un gran sombrero, y una pata de palo, \neste patito de goma te ayudara a conquistar la ba%cera.\nPero ten cuidado no se rebele y decida sustituirte como capitan del ba%co.\n", nn, nn);
+        			printf("Precio: 31.41$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        			
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[0] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
         			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
         				printf("\nRedirigiendole a la tienda...\n");
         				sleep(2);
         				banner();
         				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[0] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
 					}
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	case 2:
-        		printf("Pato seleccionado: Patito Cientifico\n");
-        		printf("Mas vale que te pongas las gafas protectoras y unos guantes, \nporque con este loco patito cualquier experimento puede irse de las alas.\nPor que creias que tiene las plumas negras? Tantos experimentos que alguno tenia que salir mal y ... EXPLOTAR.\n");
-        		printf("Precio: 100$\n");
-				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
         			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[1] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
-        			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
-        				printf("\nRedirigiendole a la tienda...\n");
-        				sleep(2);
-        				banner();
-       					break;
-					}
-					if(opcion3='C'){
-						printf("\nYendo a la cesta...\n");
-						sleep(2);
-        				banner();
-						break;
-					}
-				}
-        		break;
-        	case 3:
-        		printf("Pato seleccionado: Patito Vaquero\n");
-        		printf("Bienvenidos al oeste de la ba%cera, donde te encontraras saqueadores, jinetes, y ... \nEs eso un patito vaquero? \nCon su lazo y su increible punteria conseguira atrapar a esas burbujas escurridizas de la ba%cera.\n", nn, nn);
-        		printf("Precio: 25.99$\n");
+        		case 2:
+        			printf("Pato seleccionado: Patito Cientifico\n");
+        			printf("Mas vale que te pongas las gafas protectoras y unos guantes, \nporque con este loco patito cualquier experimento puede irse de las alas.\nPor que creias que tiene las plumas negras? Tantos experimentos que alguno tenia que salir mal y ... EXPLOTAR.\n");
+        			printf("Precio: 100$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[2] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
         			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
-        				printf("\nRedirigiendole a la tienda...\n");
-        				sleep(2);
-        				banner();
-    					break;
-					}
-					if(opcion3='C'){
-						printf("\nYendo a la cesta...\n");
-						sleep(2);
-        				banner();
-						break;
-					}
-				}
-        		break;
-        	case 4:
-        		printf("Pato seleccionado: Pato Potter\n");
-        		printf("Recien salido de Quackwarts aqui esta el elegido, el que, \narmado solo con su varita magica conseguira derrotar al se%cor oscuro.\nAyudale a conseguir su mision, o la hora del ba%co no volvera a ser lo mismo. \nEl destino del mundo magico esta en vuestras alas.\n", nn, nn);
-        		printf("Precio: 19.99$\n");
-				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[3] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
-        			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
-        				printf("\nRedirigiendole a la tienda...\n");
-        				sleep(2);
-        				banner();
-       					break;
-					}
-					if(opcion3='C'){
-						printf("\nYendo a la cesta...\n");
-						sleep(2);
-        				banner();
-						break;
-					}
-				}
-       			break;
-        	case 5:
-        		printf("Pato seleccionado: Astropato\n");
-        		printf("Desde los confines del espacio aterriza en nuestro catologo Astropato:\ntras ser el primer pato astronauta en llegar a la Luna en 1996 y \nser nombrado por la NASA en 2002 Astronauta Honorable este a%co cumplira su sue%co: llegar a tu ba%cera.\n", nn, nn, nn);
-        		printf("Precio: 19.95$\n");
-				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[4] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
-        			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
         				printf("\nRedirigiendole a la tienda...\n");
         				sleep(2);
         				banner();
         				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[1] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+       						break;
 					}
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	case 6:
-       			printf("Pato seleccionado: Patito policia\n");
-       			printf("Justo. Valiente. Honrado. Tres palabras que describen a la perfeccion a este increible justiciero.\nNo todos los heroes tienen capa, algunos como este tienen pico.\n");
-       			printf("Precio: 2.99$\n");
-       			printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
         			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[5] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
-        			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
-        				printf("\nRedirigiendole a la tienda...\n");
-        				sleep(2);
-        				banner();
-        				break;
-					}
-					if(opcion3='C'){
-						printf("\nYendo a la cesta...\n");
-						sleep(2);
-        				banner();
-						break;
-					}
-				}
-        		break;
-        	case 7:
-        		printf("Pato seleccionado: Afropato\n");
-        		printf("Afropato llega desde los 80 para a%cadir algo de ritmo a tu ba%co. \nCon su pelazo y su moviento de alas sabra como conquistar la pista de baile y tu corazon.\nSi te gusta el boogie y el plumaje de lentejuelas este es tu pato.\n", nn, nn);
-        		printf("Precio: 80$\n");
+        		case 3:
+        			printf("Pato seleccionado: Patito Vaquero\n");
+        			printf("Bienvenidos al oeste de la ba%cera, donde te encontraras saqueadores, jinetes, y ... \nEs eso un patito vaquero? \nCon su lazo y su increible punteria conseguira atrapar a esas burbujas escurridizas de la ba%cera.\n", nn, nn);
+        			printf("Precio: 25.99$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[6] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
         			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
         				printf("\nRedirigiendole a la tienda...\n");
         				sleep(2);
         				banner();
         				break;
-					}
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[2] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+    						break;
+						}
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	case 8:
-        		printf("Pato seleccionado: Patito Deportista\n");
-        		printf("Este pato tiene claro una cosa: le gusta ganar. Tras llevar a Quacka%ca a las Finales del Mundo de Petanca y \nllevarse dos veces la medalla de oro en natacion sincronizada \nha venido para ayudarte a vencer el aburrimiento en la ba%cera.\n", nn, nn);
-        		printf("Precio: 4.99$\n");
+        			break;
+        		case 4:
+        			printf("Pato seleccionado: Pato Potter\n");
+        			printf("Recien salido de Quackwarts aqui esta el elegido, el que, \narmado solo con su varita magica conseguira derrotar al se%cor oscuro.\nAyudale a conseguir su mision, o la hora del ba%co no volvera a ser lo mismo. \nEl destino del mundo magico esta en vuestras alas.\n", nn, nn);
+        			printf("Precio: 19.99$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[7] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
         			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
         				printf("\nRedirigiendole a la tienda...\n");
         				sleep(2);
         				banner();
         				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[3] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+       						break;
 					}
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	case 9:
-        		printf("Pato seleccionado: Pate Inclusive\n");
-        		printf("Aqui teneis un pato colorido para que nadie se sienta excluido!\nSu maravilloso arcoiris y sus plumas en el pelo haran de tu ba%cera un mundo nuevo\n", nn);
-        		printf("Precio: 10$\n");
-        		printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[8] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
-        			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
-        				printf("\nRedirigiendole a la tienda...\n");
-        				sleep(2);
-        				banner();
-        				break;
-					}
-					if(opcion3='C'){
-						printf("\nYendo a la cesta...\n");
-						sleep(2);
-        				banner();
-						break;
-					}
-				}
-        		break;
-        	case 10:
-        		printf("Pato seleccionado: No Pato\n");
-        		printf("Como bien dice su nombre, este patito no es un pato, o eso se piensa el.\nSu cara tapada con una bolsita de papel y su camiseta con estampado de rinoceronte \nhara que pase completamente desapercibido por tu ba%cera.\n", nn);
-        		printf("Precio: 15$\n");
+       				break;
+        		case 5:
+        			printf("Pato seleccionado: Astropato\n");
+        			printf("Desde los confines del espacio aterriza en nuestro catologo Astropato:\ntras ser el primer pato astronauta en llegar a la Luna en 1996 y \nser nombrado por la NASA en 2002 Astronauta Honorable este a%co cumplira su sue%co: llegar a tu ba%cera.\n", nn, nn, nn);
+        			printf("Precio: 19.95$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
+        				printf("\nRedirigiendole a la tienda...\n");
+        				sleep(2);
+        				banner();
+        				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[4] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
+					}
+					if(opcion3='C'){
+						printf("\nYendo a la cesta...\n");
+						sleep(2);
+        					banner();
+						break;
+					}
+				}
         			break;
-        		}
-        		if(opcion2 == 'S'){
+        		case 6:
+       				printf("Pato seleccionado: Patito policia\n");
+       				printf("Justo. Valiente. Honrado. Tres palabras que describen a la perfeccion a este increible justiciero.\nNo todos los heroes tienen capa, algunos como este tienen pico.\n");
+       				printf("Precio: 2.99$\n");
+       				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
+        				printf("\nRedirigiendole a la tienda...\n");
+        				sleep(2);
+        				banner();
+        				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[5] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
+					}
+					if(opcion3='C'){
+						printf("\nYendo a la cesta...\n");
+						sleep(2);
+        					banner();
+						break;
+					}
+				}
+        			break;
+        		case 7:
+        			printf("Pato seleccionado: Afropato\n");
+        			printf("Afropato llega desde los 80 para a%cadir algo de ritmo a tu ba%co. \nCon su pelazo y su moviento de alas sabra como conquistar la pista de baile y tu corazon.\nSi te gusta el boogie y el plumaje de lentejuelas este es tu pato.\n", nn, nn);
+        			printf("Precio: 80$\n");
+				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
+        				printf("\nRedirigiendole a la tienda...\n");
+        				sleep(2);
+        				banner();
+        				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[6] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
+					}
+					if(opcion3='C'){
+						printf("\nYendo a la cesta...\n");
+						sleep(2);
+        					banner();
+						break;
+					}
+				}
+        			break;
+        		case 8:
+        			printf("Pato seleccionado: Patito Deportista\n");
+        			printf("Este pato tiene claro una cosa: le gusta ganar. Tras llevar a Quacka%ca a las Finales del Mundo de Petanca y \nllevarse dos veces la medalla de oro en natacion sincronizada \nha venido para ayudarte a vencer el aburrimiento en la ba%cera.\n", nn, nn);
+        			printf("Precio: 4.99$\n");
+				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
+        				printf("\nRedirigiendole a la tienda...\n");
+        				sleep(2);
+        				banner();
+        				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[7] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
+					}
+					if(opcion3='C'){
+						printf("\nYendo a la cesta...\n");
+						sleep(2);
+        					banner();
+						break;
+					}
+				}
+        			break;
+        		case 9:
+        			printf("Pato seleccionado: Pate Inclusive\n");
+        			printf("Aqui teneis un pato colorido para que nadie se sienta excluido!\nSu maravilloso arcoiris y sus plumas en el pelo haran de tu ba%cera un mundo nuevo\n", nn);
+        			printf("Precio: 10$\n");
+        			printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
+        				printf("\nRedirigiendole a la tienda...\n");
+        				sleep(2);
+        				banner();
+        				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[8] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
+					}
+					if(opcion3='C'){
+						printf("\nYendo a la cesta...\n");
+						sleep(2);
+        					banner();
+						break;
+					}
+				}
+        			break;
+        		case 10:
+        			printf("Pato seleccionado: No Pato\n");
+        			printf("Como bien dice su nombre, este patito no es un pato, o eso se piensa el.\nSu cara tapada con una bolsita de papel y su camiseta con estampado de rinoceronte \nhara que pase completamente desapercibido por tu ba%cera.\n", nn);
+        			printf("Precio: 15$\n");
+				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
+        				printf("\nRedirigiendole a la tienda...\n");
+        				sleep(2);
+        				banner();
+        				break;
+        			}
+        			if(opcion2 == 'S'){
         			printf("Cuantos desea a%cadir?\n", nn);
         			scanf("%d",&auxcesta);
         			cestapatos[9] += auxcesta;
@@ -444,90 +445,90 @@ int main(){
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	case 11:
-        		printf("Pato seleccionado: Patito-Ciborg\n");
-        		printf("Este patito-ciborg esta envuelto en metal y posee en su frente un super rayo laser el cual \nhara retroceder a cualquier enemigo en tu ducha.\nTen cuidado si se enfada!\n");
-        		printf("Precio: 35$\n");
+        			break;
+        		case 11:
+        			printf("Pato seleccionado: Patito-Ciborg\n");
+        			printf("Este patito-ciborg esta envuelto en metal y posee en su frente un super rayo laser el cual \nhara retroceder a cualquier enemigo en tu ducha.\nTen cuidado si se enfada!\n");
+        			printf("Precio: 35$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n", nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
-        			printf("\nRedirigiendole a la tienda...\n");
-        			sleep(2);
-        			banner();
-        			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n", nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[10] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
         			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
         				printf("\nRedirigiendole a la tienda...\n");
         				sleep(2);
         				banner();
         				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n", nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[10] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
 					}
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	case 12:
-        		printf("Pato seleccionado: Spiderpato\n");
-        		printf("Si necesitas que la ciudad de NuevaQuack sea salvada, no dudes en llamar a Spiderpato!\nSus telara%cas se posaran por toda tu ba%cera para rescatarte del malefico Doctor Pactopus \ny asi salvar tu relajante ducha.\n", nn, nn, nn);
-        		printf("Precio: 20.99$\n");
+        			break;
+        		case 12:
+        			printf("Pato seleccionado: Spiderpato\n");
+        			printf("Si necesitas que la ciudad de NuevaQuack sea salvada, no dudes en llamar a Spiderpato!\nSus telara%cas se posaran por toda tu ba%cera para rescatarte del malefico Doctor Pactopus \ny asi salvar tu relajante ducha.\n", nn, nn, nn);
+        			printf("Precio: 20.99$\n");
 				printf("\nDesea a%cadir este patito a la cesta?\nS-Si\nN-No\n",nn);
-        		fflush(stdin);
-        		scanf("%c",&opcion2);
-        		if(opcion2 == 'N'){
+        			fflush(stdin);
+        			scanf("%c",&opcion2);
+        			if(opcion2 == 'N'){
         			printf("\nRedirigiendole a la tienda...\n");
         			sleep(2);
         			banner();
         			break;
-        		}
-        		if(opcion2 == 'S'){
-        			printf("Cuantos desea a%cadir?\n",nn);
-        			scanf("%d",&auxcesta);
-        			cestapatos[11] += auxcesta;
-        			printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
-        			fflush(stdin);
-        			scanf("%c",&opcion3);
-        			if(opcion3== 'S'){
-        				printf("\nRedirigiendole a la tienda...\n");
-        				sleep(2);
-        				banner();
-        				break;
+        			}
+        			if(opcion2 == 'S'){
+        				printf("Cuantos desea a%cadir?\n",nn);
+        				scanf("%d",&auxcesta);
+        				cestapatos[11] += auxcesta;
+        				printf("\nDesea seguir comprando o pasar a confimar la cesta?\nS-Seguir comprando\nC-Cesta\n");
+        				fflush(stdin);
+        				scanf("%c",&opcion3);
+        				if(opcion3== 'S'){
+        					printf("\nRedirigiendole a la tienda...\n");
+        					sleep(2);
+        					banner();
+        					break;
 					}
 					if(opcion3='C'){
 						printf("\nYendo a la cesta...\n");
 						sleep(2);
-        				banner();
+        					banner();
 						break;
 					}
 				}
-        		break;
-        	default:
-        		if(opcion == 0){
         			break;
+        		default:
+        			if(opcion == 0){
+        				break;
 				}
-            	printf("No hay pato asociado a ese numero, introduce otro numero\n");
-            	sleep(1.5);
-            	banner();
-    	}
-    }while((opcion<1 || opcion >12 || opcion2 == 'N' || opcion3== 'S')&& opcion != 0);
+            			printf("No hay pato asociado a ese numero, introduce otro numero\n");
+            			sleep(1.5);
+            			banner();
+    			}
+    	}while((opcion<1 || opcion >12 || opcion2 == 'N' || opcion3== 'S')&& opcion != 0);
     
-    printf("Has a%cadido a la cesta:\n",nn);
+   	printf("Has a%cadido a la cesta:\n",nn);
 	k=0;
 	while(k != contadorP){
 		if(cestapatos[k] > 0){
@@ -548,7 +549,7 @@ int main(){
 	if(opcion2== 'V' || opcion2 == 'v'){
 		printf("Vaciando cesta...\n");
 		sleep(2);
-       	banner();
+       		banner();
 		k=0;
 		while(k<contadorP){
 			cestapatos[k] = 0;
@@ -557,8 +558,8 @@ int main(){
 	}else{
 		printf("Pasando a confirmar la compra...\n");
 		if(coste>saldo){
-			printf("El precio supera el saldo de su tarjeta, no puede permitirse comprar todos estos patitos\n");
-			printf("Procedemos a borrarle la cesta...\n");
+			printf(rojo "El precio supera el saldo de su tarjeta, no puede permitirse comprar todos estos patitos\n");
+			printf("Procedemos a borrarle la cesta...\n" reset);
 			k=0;
 			while(k<contadorP){
 			cestapatos[k] = 0;
@@ -584,8 +585,9 @@ int menu(char i, struct cuentas cuenta[], int contadorC){
 	//struct cuentas cuenta[100];
 	char username[100], password[100];
 	int j, existeU=3, existeP= 3;
+	int option;
 	int nn=164;
-		
+	do{
 		switch(i){
 			case 'A':
 				printf("Para acceder a la tienda deberas iniciar sesion, en caso de no disponer de cuenta debe registrarse\n\n");
@@ -603,8 +605,8 @@ int menu(char i, struct cuentas cuenta[], int contadorC){
 					
 				    existeU = strcmp(username, cuenta[j].username); 
 					
-				    if(existeU == 0){
-				    	printf("La cuenta existe\n");
+					if(existeU == 0){
+				    		printf(verde "La cuenta existe\n"reset );
 						do{	
 							printf("Introduce su contrase%ca: \n", nn); 
 							fflush(stdin);
@@ -612,21 +614,21 @@ int menu(char i, struct cuentas cuenta[], int contadorC){
 							existeP = strcmp(password, cuenta[j].password);
 				
 							if(existeP == 0){
-								printf("Has iniciado tu cuenta correctamente\n\n");
+								printf(verde "Has iniciado tu cuenta correctamente\n\n" reset);
+								option= 1;
 								break;
 							}  
 							if (existeP != 0){
-								printf("La contrasenia no es correcta\n");	
-	
+								printf(rojo "La contrasenia no es correcta\n" reset);	
 							}
 						}while(existeP != 0);
 					}else if (j == contadorC -1 && existeU != 0 && existeP !=0){
-						printf("No existe el usuario introducido. Volviendo al menu inicial... \n\n");
-						i= 'Z';
+						printf(rojo "No existe el usuario introducido.\n\n" reset);
+						option= 0;
 						sleep(2);
 						banner();
-						}
 					}
+				}
 				break;
 				
 			case 'R':
@@ -637,18 +639,17 @@ int menu(char i, struct cuentas cuenta[], int contadorC){
 				do{
 					printf("Introduzca el nombre deseado:\n");
 					fflush(stdin);
-				    scanf("%s", username);
+				   	scanf("%s", username);
 				    
 					for(j=0; j<contadorC; j++){
 						
 						existeU = strcmp(username, cuenta[j].username); 
 						
-					    if(existeU == 0){
-						 printf("Este usuario ya existe, introduzca uno valido.\n");
-						 break;
-						}
-						else if(contadorC-1 == j && existeU != 0){
-							printf("Nombre disponible.\n");
+					    	 if(existeU == 0){
+						 	printf(rojo "Este usuario ya existe, introduzca uno valido.\n" reset);
+						 	break;
+						}else if(contadorC-1 == j && existeU != 0){
+							printf(verde"Nombre disponible.\n"reset);
 							break;
 						}
 					}
@@ -666,13 +667,13 @@ int menu(char i, struct cuentas cuenta[], int contadorC){
 				}
 				fprintf(cuentas,"%s\n",username);
 				fprintf(cuentas,"%s\n",password);
-				printf("Se ha registrado correctamente.\n\n");
+				printf(verde "Se ha registrado correctamente.\n\n"reset);
 				break;
 			case 'S':
 				printf("Saliendo...");
 				return 0;
 		}
-
+	}while(option == 0);
 }
 
 void hastaluego(){
@@ -714,18 +715,18 @@ float saldof(){
 			while(i<strlen(nombretarjeta)){
 				i2=0;
 				contesp=0;
-					while(i2<strlen(nombretarjeta)){
-						if(nombretarjeta[i2] == ' '){
-							contesp++;
-						}
-						i2++;
+				while(i2<strlen(nombretarjeta)){
+					if(nombretarjeta[i2] == ' '){
+						contesp++;
 					}
+					i2++;
+				}
 				if((nombretarjeta[i] < 'A' || nombretarjeta[i] > 'Z') && (nombretarjeta[i] != ' ')){
-					printf("Nombre invalido, recuerde que debe estar completamente en mayusculas\n");
+					printf(rojo "Nombre invalido, recuerde que debe estar completamente en mayusculas\n" reset);
 					checknom = 0;
 					break;
 				}else if(contesp!=2){
-					printf("Nombre invalido, recuerde que solo debe escribir un nombre y dos apellidos\n");
+					printf(rojo "Nombre invalido, recuerde que solo debe escribir un nombre y dos apellidos\n" reset);
 					checknom=0;
 					break;
 				}
@@ -743,11 +744,11 @@ float saldof(){
 			i=0;
 			while(i < strlen(numerotarjeta)){
 				if((numerotarjeta[i] < '0' || numerotarjeta[i] > '9') && (numerotarjeta[i] != ' ')  ){
-					printf("Numero invalido, recuerda que solo se aceptan numeros y espacios\n");
+					printf(rojo "Numero invalido, recuerda que solo se aceptan numeros y espacios\n" reset);
 					checknum= 0;
 					break;
 				}else if (strlen(numerotarjeta) != 19){
-					printf("Numero invalido, recuerda que debe ser de la forma 'NNNN NNNN NNNN NNNN'\n");
+					printf(rojo "Numero invalido, recuerda que debe ser de la forma 'NNNN NNNN NNNN NNNN'\n" reset);
 					checknum=0;
 					break;
 				}else {
@@ -763,11 +764,11 @@ float saldof(){
 			i=0;
 			while(i < strlen(codtarjeta)){
 				if(codtarjeta[i] < '0' || codtarjeta[i] > '9' ){
-					printf("Codigo invalido, recuerde que solo se aceptan numeros y espacios\n");
+					printf( rojo "Codigo invalido, recuerde que solo se aceptan numeros y espacios\n"reset);
 					checkcod= 0;
 					break;
 				}else if (strlen(codtarjeta) != 3){
-					printf("Codigo invalido, recuerde que son 3 digitos\n");
+					printf(rojo "Codigo invalido, recuerde que son 3 digitos\n"reset );
 					checkcod=0;
 					break;
 				}else {
@@ -785,16 +786,16 @@ float saldof(){
 			scanf("%d",&fa);
 			checkfecha= 0;
 			if(fm<1 || fm>12){
-				printf("Fecha invalida, mes inexistente\n");
+				printf(rojo "Fecha invalida, mes inexistente\n" reset);
 				checkfecha=0;
 			}else if(fa>99){
-				printf("Fecha invalida, a%co inexistente\n",nn);
+				printf(rojo "Fecha invalida, a%co inexistente\n" reset,nn);
 				checkfecha=0;
 			}else if((fa==20 && fm<5) || (fa<20 )){
-				printf("Fecha invalida, la tarjeta ya ha caducado\n");
+				printf(rojo"Fecha invalida, la tarjeta ya ha caducado\n"reset);
 				checkfecha=0;
 			}else if(fb != '/'){
-				printf("Fecha invalida, recuerda que debes incluir '/' entre el mes y el a%co\n",nn);
+				printf(rojo"Fecha invalida, recuerda que debes incluir '/' entre el mes y el a%co\n"reset,nn);
 			}else{
 				checkfecha=1;
 			}
@@ -807,5 +808,5 @@ float saldof(){
 		scanf("%c",&letra);
 		return saldo;
 	}while(letra == 'S' || letra == 's');
-	printf("Su tarjeta ha sido introducida con exito\n");
+	printf(verde "Su tarjeta ha sido introducida con exito\n" reset);
 }
