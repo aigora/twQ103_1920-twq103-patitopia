@@ -833,7 +833,7 @@ void tiempof(){
 	do{
 		sleep(3);
 		banner();
-		printf("Porfavor indique la ubicacion donde desee que le hagamos la entrega\n\n");
+		printf("Por favor, indique la direccion de entrega del paquete:\n\n");
 		do{
 			printf("Pais de residencia en mayusculas:\n");
 			fflush(stdin);
@@ -852,11 +852,11 @@ void tiempof(){
 			k=0;
 			while(k<numeroP){
 				if(strcmp(ubi[k].pais,pais) == 0){	
-					printf(verde "Podriamos realizar la entrega en el pais indicado\n" reset);
+					printf(verde "Podemos realizar la entrega en el pais indicado\n" reset);
 					check=1;
 					break;
 				}else if(k==numeroP-1 && strcmp(ubi[k].pais,pais) != 0 && check==1){
-					printf(rojo "Parece ser que nuestros medios no nos permiten llegar hasta tal pais\n" reset );
+					printf(rojo "Nuestros medios no nos permiten llegar hasta tal pais\n" reset );
 					check=0;
 					break;
 				}
@@ -930,7 +930,7 @@ void tiempof(){
 			scanf("%c",&opt);
 			
 			if(opt == 'C'){
-				printf(verde "En ese caso no seran necesario mas datos, gracias\n" reset);
+				printf(verde "En ese caso no son necesario mas datos, gracias\n" reset);
 				check=1;	
 			}else if(opt == 'P'){
 				do{
@@ -969,11 +969,11 @@ void tiempof(){
 		srand(time(NULL)*100000);
 		tiempo= 15 + rand() % (310-15);
 		if(tiempo < 49){
-			printf("Parece ser que disponemos de almacenes cerca suya, podriamos hacer la entrega en aproximadamente %d horas\n",tiempo);
+			printf("Parece ser que disponemos de almacenes cerca suya, podriamos hacer la entrega en unas %d horas\n",tiempo);
 		}else if(tiempo >192){
-			printf("Al no disponer de almacenes cerca suya el pedido tardara algo mas de una semana en llegar,\nunos %d dias\n",tiempo/24);
+			printf("Al no disponer de almacenes cerca suya el pedido tardara algo mas de una semana en llegar,\naproximadamente %d dias\n",tiempo/24);
 		}else{
-			printf("Su pedido llegaria a la ubicacion en %d dias\n",tiempo/24);
+			printf("Su pedido llegara a su ubicacion en %d dias\n",tiempo/24);
 		}
 			printf("Desea confirmar la ubicacion o modificarla?\nC-Confirmar\nM-Modificar datos\n");
 			fflush(stdin);
